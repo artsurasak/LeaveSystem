@@ -1,0 +1,311 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{726D5FEA-8902-430B-8B43-F5EBB040FED2}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>IS</RootNamespace>
+    <AssemblyName>IS</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Bootstrape\CSS\bootstrap-grid.css.map" />
+    <Content Include="Bootstrape\CSS\bootstrap-grid.min.css.map" />
+    <Content Include="Bootstrape\CSS\bootstrap-reboot.css.map" />
+    <Content Include="Bootstrape\CSS\bootstrap-reboot.min.css.map" />
+    <Content Include="Bootstrape\CSS\bootstrap.css.map" />
+    <Content Include="Bootstrape\CSS\bootstrap.min.css" />
+    <Content Include="Bootstrape\CSS\bootstrap.min.css.map" />
+    <Content Include="Bootstrape\CSS\signin.css" />
+    <Content Include="Bootstrape\JS\bootstrap.bundle.js.map" />
+    <Content Include="Bootstrape\JS\bootstrap.bundle.min.js.map" />
+    <Content Include="Bootstrape\JS\bootstrap.js.map" />
+    <Content Include="Bootstrape\JS\bootstrap.min.js.map" />
+    <Content Include="Bootstrape\JS\jquery\jquery-3.3.1.js" />
+    <Content Include="MainFrame.Master" />
+    <Content Include="Page\Report.aspx" />
+    <Content Include="Page\ReportStatusLeave.aspx" />
+    <Content Include="WickedPicker\dist\wickedpicker.min.css" />
+    <Content Include="WickedPicker\dist\wickedpicker.min.js" />
+    <Content Include="WickedPicker\fonts\fontello.svg" />
+    <Content Include="WickedPicker\gulpfile.js" />
+    <Content Include="WickedPicker\jquery-1.11.3.js" />
+    <Content Include="WickedPicker\spec\wickedpickerSpec.js" />
+    <Content Include="WickedPicker\src\wickedpicker.js" />
+    <Content Include="WickedPicker\stylesheets\wickedpicker.css" />
+    <None Include="Properties\PublishProfiles\SP.pubxml" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <Content Include="WickedPicker\.gitignore" />
+    <Content Include="WickedPicker\bower.json" />
+    <Content Include="WickedPicker\fonts\fontello.eot" />
+    <Content Include="WickedPicker\fonts\fontello.ttf" />
+    <Content Include="WickedPicker\fonts\fontello.woff" />
+    <Content Include="WickedPicker\LICENSE.md" />
+    <Content Include="WickedPicker\package.json" />
+    <Content Include="WickedPicker\README.md" />
+    <Content Include="WickedPicker\sass\wickedpicker.scss" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Bootstrape\CSS\bootstrap-grid.css" />
+    <Content Include="Bootstrape\CSS\bootstrap-grid.min.css" />
+    <Content Include="Bootstrape\CSS\bootstrap-reboot.css" />
+    <Content Include="Bootstrape\CSS\bootstrap-reboot.min.css" />
+    <Content Include="Bootstrape\CSS\bootstrap.css" />
+    <Content Include="Bootstrape\JS\bootstrap.bundle.js" />
+    <Content Include="Bootstrape\JS\bootstrap.bundle.min.js" />
+    <Content Include="Bootstrape\JS\bootstrap.js" />
+    <Content Include="Bootstrape\JS\bootstrap.min.js" />
+    <Content Include="Default.aspx" />
+    <Content Include="Page\ConfirmRequest.aspx" />
+    <Content Include="Page\CreateGroup.aspx" />
+    <Content Include="Page\CreateRequestLeave.aspx" />
+    <Content Include="Page\CreateUserList.aspx" />
+    <Content Include="Page\HistoryLeave.aspx" />
+    <Content Include="Page\HistoryLeave1.aspx" />
+    <Content Include="Page\ListRequestAppr.aspx" />
+    <Content Include="Page\Logout.aspx" />
+    <Content Include="Page\popUp\DeleteRequest.aspx" />
+    <Content Include="Page\popUp\ManageLeave.aspx" />
+    <Content Include="Page\SearchRequestLeave.aspx" />
+    <Content Include="Page\SearchUser.aspx" />
+    <Content Include="Page\setListLeaveType.aspx" />
+    <Content Include="Page\StateLeave.aspx" />
+    <Content Include="Page\StatusLeave.aspx" />
+    <Content Include="Page\UserList.aspx" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="class_is\ClassLeaveSystem.cs" />
+    <Compile Include="class_is\dbconfig.cs" />
+    <Compile Include="Default.aspx.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Default.aspx.designer.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Page\ConfirmRequest.aspx.cs">
+      <DependentUpon>ConfirmRequest.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Page\ConfirmRequest.aspx.designer.cs">
+      <DependentUpon>ConfirmRequest.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Page\CreateGroup.aspx.cs">
+      <DependentUpon>CreateGroup.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Page\CreateGroup.aspx.designer.cs">
+      <DependentUpon>CreateGroup.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="MainFrame.Master.cs">
+      <DependentUpon>MainFrame.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MainFrame.Master.designer.cs">
+      <DependentUpon>MainFrame.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Page\CreateRequestLeave.aspx.cs">
+      <DependentUpon>CreateRequestLeave.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Page\CreateRequestLeave.aspx.designer.cs">
+      <DependentUpon>CreateRequestLeave.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Page\CreateUserList.aspx.cs">
+      <DependentUpon>CreateUserList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Page\CreateUserList.aspx.designer.cs">
+      <DependentUpon>CreateUserList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Page\HistoryLeave.aspx.cs">
+      <DependentUpon>HistoryLeave.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Page\HistoryLeave.aspx.designer.cs">
+      <DependentUpon>HistoryLeave.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Page\HistoryLeave1.aspx.cs">
+      <DependentUpon>HistoryLeave1.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Page\HistoryLeave1.aspx.designer.cs">
+      <DependentUpon>HistoryLeave1.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Page\ListRequestAppr.aspx.cs">
+      <DependentUpon>ListRequestAppr.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Page\ListRequestAppr.aspx.designer.cs">
+      <DependentUpon>ListRequestAppr.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Page\Logout.aspx.cs">
+      <DependentUpon>Logout.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Page\Logout.aspx.designer.cs">
+      <DependentUpon>Logout.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Page\popUp\DeleteRequest.aspx.cs">
+      <DependentUpon>DeleteRequest.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Page\popUp\DeleteRequest.aspx.designer.cs">
+      <DependentUpon>DeleteRequest.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Page\popUp\ManageLeave.aspx.cs">
+      <DependentUpon>ManageLeave.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Page\popUp\ManageLeave.aspx.designer.cs">
+      <DependentUpon>ManageLeave.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Page\Report.aspx.cs">
+      <DependentUpon>Report.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Page\Report.aspx.designer.cs">
+      <DependentUpon>Report.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Page\ReportStatusLeave.aspx.cs">
+      <DependentUpon>ReportStatusLeave.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Page\ReportStatusLeave.aspx.designer.cs">
+      <DependentUpon>ReportStatusLeave.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Page\SearchRequestLeave.aspx.cs">
+      <DependentUpon>SearchRequestLeave.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Page\SearchRequestLeave.aspx.designer.cs">
+      <DependentUpon>SearchRequestLeave.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Page\SearchUser.aspx.cs">
+      <DependentUpon>SearchUser.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Page\SearchUser.aspx.designer.cs">
+      <DependentUpon>SearchUser.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Page\setListLeaveType.aspx.cs">
+      <DependentUpon>setListLeaveType.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Page\setListLeaveType.aspx.designer.cs">
+      <DependentUpon>setListLeaveType.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Page\StateLeave.aspx.cs">
+      <DependentUpon>StateLeave.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Page\StateLeave.aspx.designer.cs">
+      <DependentUpon>StateLeave.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Page\StatusLeave.aspx.cs">
+      <DependentUpon>StatusLeave.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Page\StatusLeave.aspx.designer.cs">
+      <DependentUpon>StatusLeave.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Page\UserList.aspx.cs">
+      <DependentUpon>UserList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Page\UserList.aspx.designer.cs">
+      <DependentUpon>UserList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup />
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>58929</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:58929/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
