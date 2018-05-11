@@ -147,7 +147,7 @@ namespace IS.Page
             sql = "INSERT INTO [REQUEST_LEAVE] ( ";
             sql += "[LEAVETYPE_ID],[FROM_LEAVE_DATE],[FROM_LEAVE_TIME] ";
             sql += ",[TO_LEAVE_DATE],[TO_LEAVE_TIME],[NO_LEAVE],[NO_LEAVE_HOUR] ";
-            sql += ",[NOTE],[CONTACT],[CONTACT_TEL],[STATUS],[APRROVE_BY],[REQ_CONFIRM],CONFIRM_BY ";
+            sql += ",[NOTE],[CONTACT],[CONTACT_TEL],[STATUS],[APPROVE_BY],[REQ_CONFIRM],CONFIRM_BY ";
             sql += ",[CREATE_DATE],[CREATE_BY],[UPDATE_DATE],[UPDATE_BY] ";
             sql += ") VALUES (";
             sql += "'" + ddlLeaveType.SelectedValue + "',";

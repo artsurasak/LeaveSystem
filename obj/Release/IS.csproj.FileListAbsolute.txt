@@ -1,6 +1,0 @@
-C:\Users\SP\documents\visual studio 2013\Projects\IS\IS\bin\IS.dll.config
-C:\Users\SP\documents\visual studio 2013\Projects\IS\IS\bin\IS.dll
-C:\Users\SP\documents\visual studio 2013\Projects\IS\IS\bin\IS.pdb
-C:\Users\SP\documents\visual studio 2013\Projects\IS\IS\obj\Release\IS.csprojResolveAssemblyReference.cache
-C:\Users\SP\documents\visual studio 2013\Projects\IS\IS\obj\Release\IS.dll
-C:\Users\SP\documents\visual studio 2013\Projects\IS\IS\obj\Release\IS.pdb

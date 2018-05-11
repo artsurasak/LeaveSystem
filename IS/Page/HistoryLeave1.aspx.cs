@@ -49,7 +49,7 @@ namespace IS.Page
             sql += "WHEN STATUS = 'R' THEN 'ไม่อนุญาต' ";
             sql += "WHEN STATUS = 'I' THEN 'รอพิจารณา' ";
             sql +="END as  STATUS ";
-            sql += ",reqLeave.APRROVE_BY AS APPROVE_BY ";
+            sql += ",reqLeave.APPROVE_BY AS APPROVE_BY ";
             sql += ",REQ_CONFIRM AS ConfirmStatus ";
             sql += ",reqLeave.CONFIRM_BY AS CONFIRM_BY ";
             sql += "from [REQUEST_LEAVE] reqLeave  , [LEAVE_TYPE] LTYPE ";

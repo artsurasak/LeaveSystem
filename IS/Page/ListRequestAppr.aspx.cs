@@ -52,7 +52,7 @@ namespace IS.Page
             if (EmpCode != "") sql += "AND reqLeave.CREATE_BY = '" + EmpCode + "' ";
             if (LType != "*") sql += "AND reqLeave.LEAVETYPE_ID = '" + LType + "' ";
             if (Status != "*") sql += "AND STATUS = '" + Status + "'";
-            sql += "and reqLeave.APRROVE_BY = '" + Session["empCode"] + "'";
+            sql += "and reqLeave.APPROVE_BY = '" + Session["empCode"] + "'";
             sql += ") as tbl1 ";
             sql += "left join ";
             sql += "( ";
@@ -164,7 +164,7 @@ namespace IS.Page
             sql = "Update [REQUEST_LEAVE] set ";
             sql += "STATUS = '" + _Status + "',";
             sql += "APPROVE_DATE = sysdatetime(),";
-            sql += "APRROVE_BY = '" + Session["empCode"] + "'";
+            sql += "APPROVE_BY = '" + Session["empCode"] + "'";
             sql += "where LEAVE_ID = '" + _LeaveID + "'";
             return sql;
         }

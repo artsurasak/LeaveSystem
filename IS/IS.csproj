@@ -65,6 +65,7 @@
     <Content Include="Bootstrape\CSS\bootstrap.css.map" />
     <Content Include="Bootstrape\CSS\bootstrap.min.css" />
     <Content Include="Bootstrape\CSS\bootstrap.min.css.map" />
+    <Content Include="Bootstrape\CSS\custom.css" />
     <Content Include="Bootstrape\CSS\signin.css" />
     <Content Include="Bootstrape\JS\bootstrap.bundle.js.map" />
     <Content Include="Bootstrape\JS\bootstrap.bundle.min.js.map" />

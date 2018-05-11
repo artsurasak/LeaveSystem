@@ -36,7 +36,7 @@ namespace IS.Page
             sql += "WHEN STATUS = 'R' THEN 'ไม่อนุญาต' ";
             sql += "WHEN STATUS = 'I' THEN 'รอพิจารณา' ";
             sql += "END as  STATUS , ";
-            sql += "reqLeave.APRROVE_BY as APPROVE_BY , ";
+            sql += "reqLeave.APPROVE_BY as APPROVE_BY , ";
             sql += "convert(varchar(10),reqLeave.APPROVE_DATE,103) + ' ' + convert(varchar(5), reqLeave.APPROVE_DATE,114) as ApprDate , ";
             sql += "reqLeave.REQ_CONFIRM AS confirmStatus , ";
             sql += "reqLeave.CONFIRM_BY as empConfirm, ";
