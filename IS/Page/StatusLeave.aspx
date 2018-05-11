@@ -17,7 +17,7 @@
             <asp:TableCell ColumnSpan="2" HorizontalAlign="Center"><asp:Button ID="btnSearch" Text="ค้นหา" runat="server" OnClick="btnSearch_Click" /></asp:TableCell>
         </asp:TableRow>
     </asp:Table>
-    <asp:DataGrid HorizontalAlign="Center" ID="dtgList" runat="server" AutoGenerateColumns="false">
+    <asp:DataGrid CssClass="table table-hover" HorizontalAlign="Center" ID="dtgList" runat="server" AutoGenerateColumns="false">
         <HeaderStyle BackColor="Gainsboro" HorizontalAlign="Center" />
         <ItemStyle HorizontalAlign="Center" />
         <Columns>

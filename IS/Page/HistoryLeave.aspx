@@ -27,12 +27,8 @@
             }
         }
     </script>
-    <fieldset class="login">
-        <legend>ค้นหาประวัติการลา</legend>
         <asp:Table runat="server">
-            <asp:TableRow>
-                <asp:TableCell>เลือกวันที่</asp:TableCell>
-            </asp:TableRow>
+            <asp:TableRow><asp:TableCell>เลือกวันที่</asp:TableCell></asp:TableRow>
             <asp:TableRow>
                 <asp:TableCell>
                     <asp:RadioButtonList ID="rblType" runat="server">
@@ -56,5 +52,4 @@
                 </asp:TableCell>
             </asp:TableRow>
         </asp:Table>
-    </fieldset>
 </asp:Content>

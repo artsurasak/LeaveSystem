@@ -51,12 +51,29 @@ namespace IS.Page
                     HtmlGenericControl div = new HtmlGenericControl();
                     if (ds.Tables[0].Rows[i]["MENU_SUB_LINK"].ToString() == "")
                     {
-                        li.Attributes["class"] = "nav-item";
-                        a.Attributes["class"] = "nav-link";
-                        a.HRef = ds.Tables[0].Rows[i]["MENU_LINK"].ToString();
-                        a.InnerText = ds.Tables[0].Rows[i]["MENU_NAME"].ToString();
-                        li.Controls.Add(a);
-                        ulMenu.Controls.Add(li);
+                        if (Request.QueryString["Menu"] == ds.Tables[0].Rows[i]["MENU_NAME"].ToString())
+                        {
+                            //string test = Request.QueryString["Menu"];
+                            li.Attributes["class"] = "nav-item";
+                            //li.Attributes.Add = "nav-item";
+                            a.Attributes["class"] = "nav-link active";
+                            a.Attributes.Add("Style", "color:#ffffff; background-color:#7d2daf;");
+                            //a.Attributes.Add("Style", "background-color:#7d2daf");
+                            a.HRef = ds.Tables[0].Rows[i]["MENU_LINK"].ToString();
+                            a.InnerText = ds.Tables[0].Rows[i]["MENU_NAME"].ToString();
+                            li.Controls.Add(a);
+                            ulMenu.Controls.Add(li);
+                        }
+                        else
+                        {
+                            li.Attributes["class"] = "nav-item";
+                            a.Attributes["class"] = "nav-link";
+                            a.HRef = ds.Tables[0].Rows[i]["MENU_LINK"].ToString();
+                            a.InnerText = ds.Tables[0].Rows[i]["MENU_NAME"].ToString();
+                            li.Controls.Add(a);
+                            ulMenu.Controls.Add(li);
+                        }
+                        
                     }
                     else{
                         li.Attributes["class"] = "nav-item dropdown";

@@ -18,7 +18,7 @@
         });
 
         $(function () {
-            $(".datepicker").datepicker({
+            $(".form-control.datepicker").datepicker({
                 dateFormat: "dd/mm/yy",
             });
             var currentdate = new Date();
@@ -27,7 +27,7 @@
             if (ftime == '') { ftime = timenow; }
             var ttime = '<%=  hdttime.Value %>';
             if (ttime == '') { ttime = timenow; }
-            $('.timepicker').wickedpicker({
+            $('.form-control.timepicker').wickedpicker({
                 //now: "" + ftime + "",
                 now: ftime,
                 twentyFour: true,
@@ -44,7 +44,7 @@
                 clearable: false //Make the picker's input clearable (has clickable "x")  };
             });
 
-            $('.timepicker1').wickedpicker({
+            $('.form-control.timepicker1').wickedpicker({
                 //now: "" + ftime + "",
                 now: ttime,
                 twentyFour: true,
@@ -79,70 +79,43 @@
     <asp:Label runat="server" class="font-weight-bold">สร้างคำร้องการลา</asp:Label>
     <asp:Table runat="server">
         <asp:TableRow>
-            <asp:TableCell>
-                <asp:Label runat="server">ประเภทการลา</asp:Label>
-            </asp:TableCell>
-            <asp:TableCell>
-                <asp:DropDownList ID="ddlLeaveType" runat="server">
-                </asp:DropDownList>
-            </asp:TableCell>
-            <asp:TableCell>
-                <asp:Label runat="server">แนบไฟล์</asp:Label>
-            </asp:TableCell>
-            <asp:TableCell>
-                <asp:FileUpload runat="server" ID="FileUpload" />
-            </asp:TableCell>
+            <asp:TableCell><asp:Label runat="server">ประเภทการลา</asp:Label></asp:TableCell>
+            <asp:TableCell><asp:DropDownList ID="ddlLeaveType" CssClass="form-control" runat="server"></asp:DropDownList></asp:TableCell>
+            <asp:TableCell ColumnSpan="2" HorizontalAlign="Right"><asp:Label runat="server">แนบไฟล์</asp:Label></asp:TableCell>
+            <asp:TableCell ColumnSpan="4"><asp:FileUpload runat="server" ID="FileUpload" /></asp:TableCell>
         </asp:TableRow>
         <asp:TableRow>
-            <asp:TableCell>
-                <asp:Label runat="server">วันที่ลา</asp:Label>
-            </asp:TableCell>
-            <asp:TableCell ColumnSpan="3">
-                <asp:TextBox ID="txtFDateLeave" CssClass="datepicker" runat="server"></asp:TextBox>&nbsp;
-                <asp:Label runat="server">เวลา</asp:Label>&nbsp;
-                <asp:TextBox ID="txtFTimeLeave" CssClass="timepicker" runat="server"></asp:TextBox>&nbsp;
-                <asp:Label runat="server">ถึง</asp:Label>&nbsp;
-                <asp:TextBox ID="txtTDateLeave" CssClass="datepicker" runat="server"></asp:TextBox>&nbsp;
-                <asp:Label runat="server">เวลา</asp:Label>&nbsp;
-                <asp:TextBox ID="txtTTimeLeave" CssClass="timepicker1" runat="server"></asp:TextBox>&nbsp;&nbsp;
-                <asp:Button runat="server" Text="คำนวณวัน" ID="btnCal" OnClick="btnCal_Click" />
-            </asp:TableCell>
+            <asp:TableCell><asp:Label runat="server">วันที่ลา</asp:Label></asp:TableCell>
+            <asp:TableCell><asp:TextBox ID="txtFDateLeave" CssClass="form-control datepicker" runat="server"></asp:TextBox></asp:TableCell>
+            <asp:TableCell><asp:Label runat="server">เวลา</asp:Label></asp:TableCell>
+            <asp:TableCell><asp:TextBox ID="txtFTimeLeave" CssClass="form-control timepicker" runat="server"></asp:TextBox></asp:TableCell>
+            <asp:TableCell><asp:Label runat="server">ถึง</asp:Label></asp:TableCell>
+            <asp:TableCell><asp:TextBox ID="txtTDateLeave" CssClass="form-control datepicker" runat="server"></asp:TextBox></asp:TableCell>
+            <asp:TableCell><asp:Label runat="server">เวลา</asp:Label></asp:TableCell>
+            <asp:TableCell><asp:TextBox ID="txtTTimeLeave" CssClass="form-control timepicker1" runat="server"></asp:TextBox></asp:TableCell>
+            <asp:TableCell><asp:Button runat="server" Text="คำนวณวัน" ID="btnCal" OnClick="btnCal_Click" /></asp:TableCell>
         </asp:TableRow>
         <asp:TableRow>
-            <asp:TableCell>
-                <asp:Label runat="server">จำนวนวันที่ลา</asp:Label>
-            </asp:TableCell>
-            <asp:TableCell>
-                <asp:TextBox runat="server" ID="txtDay" ReadOnly="true" Width="50"></asp:TextBox>&nbsp;วัน&nbsp;
-                <asp:TextBox runat="server" ID="txtHour" ReadOnly="true" Width="50"></asp:TextBox>&nbsp;ชั่วโมง
-            </asp:TableCell>
+            <asp:TableCell><asp:Label runat="server">จำนวนวันที่ลา</asp:Label></asp:TableCell>
+            <asp:TableCell><asp:TextBox runat="server" ID="txtDay" CssClass="form-control"></asp:TextBox></asp:TableCell>
+            <asp:TableCell><asp:Label runat="server">วัน</asp:Label></asp:TableCell>
+            <asp:TableCell><asp:TextBox runat="server" ID="txtHour" CssClass="form-control"></asp:TextBox></asp:TableCell>
+            <asp:TableCell><asp:Label runat="server">ชั่วโมง</asp:Label></asp:TableCell>
         </asp:TableRow>
         <asp:TableRow>
-            <asp:TableCell>
-                <asp:Label runat="server">สาเหตุการลา</asp:Label>
-            </asp:TableCell>
-            <asp:TableCell>
-                <asp:TextBox TextMode="MultiLine" Width="100%" Rows="3" runat="server" ID="txtCauseleave"></asp:TextBox>
-            </asp:TableCell>
+            <asp:TableCell><asp:Label runat="server">สาเหตุการลา</asp:Label></asp:TableCell>
+            <asp:TableCell ColumnSpan="2"><asp:TextBox TextMode="MultiLine" CssClass="form-control" Rows="3" runat="server" ID="txtCauseleave"></asp:TextBox></asp:TableCell>
         </asp:TableRow>
         <asp:TableRow>
-            <asp:TableCell>
-                <asp:Label ID="lbltest" runat="server">ชื่อผู้ติดต่อระหว่างลา</asp:Label>
-            </asp:TableCell>
-            <asp:TableCell>
-                <asp:TextBox Widt="100%" runat="server" ID="txtContact"></asp:TextBox>
-            </asp:TableCell>
+            <asp:TableCell><asp:Label ID="lbltest" runat="server">ชื่อผู้ติดต่อระหว่างลา</asp:Label></asp:TableCell>
+            <asp:TableCell><asp:TextBox Widt="100%" runat="server" CssClass="form-control" ID="txtContact"></asp:TextBox></asp:TableCell>
         </asp:TableRow>
         <asp:TableRow>
-            <asp:TableCell>
-                <asp:Label runat="server">เบอร์โทรศัพท์ผู้ติดต่อระหว่างลา</asp:Label>
-            </asp:TableCell>
-            <asp:TableCell>
-                <asp:TextBox Widt="100%" runat="server" ID="txtTelContact"></asp:TextBox>
-            </asp:TableCell>
+            <asp:TableCell><asp:Label runat="server">เบอร์โทรศัพท์ผู้ติดต่อระหว่างลา</asp:Label></asp:TableCell>
+            <asp:TableCell><asp:TextBox Widt="100%" runat="server" CssClass="form-control" ID="txtTelContact"></asp:TextBox></asp:TableCell>
         </asp:TableRow>
         <asp:TableRow>
-            <asp:TableCell ColumnSpan="4" HorizontalAlign="Center">
+            <asp:TableCell ColumnSpan="10" HorizontalAlign="Center">
                 <asp:Button ID="btnSave" class="btn btn-secondary" runat="server" Text="บันทึก" OnClick="btnSave_Click" />&nbsp;
                 <asp:Button ID="btnCancel" class="btn btn-secondary" runat="server" Text="ยกเลิก" OnClick="btnCancel_Click" />
             </asp:TableCell>
