@@ -12,7 +12,10 @@ namespace IS.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            getLeaveType();
+            if (!Page.IsPostBack)
+            {
+                getLeaveType();
+            }
         }
 
         private void getLeaveType()

@@ -16,9 +16,11 @@
         }
     </script>
     <asp:Label ID="lbl1" runat="server"></asp:Label>
-    <asp:Label runat="server" class="font-weight-bold">ประวัติการลา</asp:Label>
-    <asp:DataGrid ID="dtgList" runat="server" AutoGenerateColumns="false" HorizontalAlign="Center">
-        <HeaderStyle BackColor="Gainsboro" HorizontalAlign="Center" />
+    <asp:Label runat="server" class="font-weight-bold">
+        <h4><i class="fa fa-th-list" style="font-size:24px"></i>&nbsp;ประวัติการลา</h4>
+    </asp:Label>
+    <asp:DataGrid ID="dtgList" CssClass="table table-hover" runat="server" AutoGenerateColumns="false" HorizontalAlign="Center">
+        <HeaderStyle BackColor="#ae56c4" ForeColor="White" Font-Size="Larger" HorizontalAlign="Center" />
         <ItemStyle HorizontalAlign="Center" />
         <Columns>
             <asp:BoundColumn DataField="LeaveID" Visible="false"></asp:BoundColumn>
@@ -34,13 +36,13 @@
             <asp:TemplateColumn HeaderText="แก้ไข">
                 <ItemTemplate>
                     <asp:LinkButton ID="Link1" runat="server" CommandName="Edit" Text="Edit"
-                        OnClientClick='<%#string.Format("return popUpManageReq(\"{0}\");",DataBinder.Eval(Container.DataItem, "LeaveID")) %>'>Edit</asp:LinkButton>
+                        OnClientClick='<%#string.Format("return popUpManageReq(\"{0}\");",DataBinder.Eval(Container.DataItem, "LeaveID")) %>'>แก้ไข </asp:LinkButton>
                 </ItemTemplate>
             </asp:TemplateColumn>
             <asp:TemplateColumn HeaderText="ยกเลิก">
                 <ItemTemplate>
                     <asp:LinkButton ID="Link2" runat="server" CommandName="Delete" Text="Delete" 
-                        OnClientClick='<%#string.Format("return deleteReq(\"{0}\");",DataBinder.Eval(Container.DataItem, "LeaveID")) %>'>Delete</asp:LinkButton>
+                        OnClientClick='<%#string.Format("return deleteReq(\"{0}\");",DataBinder.Eval(Container.DataItem, "LeaveID")) %>'>ยกเลิก</asp:LinkButton>
                 </ItemTemplate>
             </asp:TemplateColumn>
         </Columns>

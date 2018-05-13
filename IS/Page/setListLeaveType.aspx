@@ -15,12 +15,15 @@
             return window.open(url, title, 'toolbar=no, location=no, directories=no, status=no, menubar=no, scrollbars=no, resizable=no, copyhistory=no, width=' + w + ', height=' + h + ', top=' + top + ', left=' + left);
         }
     </script>
-    <asp:Label runat="server" class="font-weight-bold">จัดการการลา</asp:Label><br />
+    <asp:Label runat="server" class="font-weight-bold">
+
+        <h4><i class="fa fa-gears" style="font-size:24px"></i>&nbsp;จัดการการลา</h4>
+    </asp:Label>
     <div style="width:99%; text-align:right;">
-        <asp:Button ID="btnAdd" runat="server" OnClientClick="popUpManageLeave();" Text="Add" />
+        <asp:Button ID="btnAdd" runat="server" OnClientClick="popUpManageLeave();" CssClass="btn" BackColor="#ae56c4" ForeColor="White" Text="Add" />
     </div>
-    <asp:DataGrid ID="dtg" Width="99%" runat="server" HorizontalAlign="Center" AllowSorting="true" AutoGenerateColumns="false">
-        <HeaderStyle BackColor="Gainsboro" />
+    <asp:DataGrid ID="dtg" CssClass="table table-hover" Width="99%" runat="server" HorizontalAlign="Center" AllowSorting="true" AutoGenerateColumns="false">
+        <HeaderStyle BackColor="#ae56c4" ForeColor="White" Font-Size="Larger" HorizontalAlign="Center" />
         <Columns>
             <asp:BoundColumn HeaderText="Role" DataField="Role"></asp:BoundColumn>
             <asp:BoundColumn HeaderText="ประเภทการลา" DataField="LeaveType"></asp:BoundColumn>

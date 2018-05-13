@@ -10,7 +10,7 @@
 namespace IS.Page {
     
     
-    public partial class ReportStatusLeave {
+    public partial class ReportNoLeave {
         
         /// <summary>
         /// tblSearch control.

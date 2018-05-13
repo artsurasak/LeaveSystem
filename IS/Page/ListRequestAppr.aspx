@@ -13,13 +13,13 @@
             }
         }
     </script>
-    <asp:Label runat="server" class="font-weight-bold">รายการคำร้องขออนุมัติ</asp:Label>
-    <asp:DataGrid ID="dtgList" runat="server" AutoGenerateColumns="false" 
+    <asp:Label runat="server" class="font-weight-bold"><h4><span class="fa fa-check"></span>&nbsp;รายการคำร้องขออนุมัติ</h4></asp:Label>
+    <asp:DataGrid ID="dtgList" CssClass="table table-hover" runat="server" AutoGenerateColumns="false" 
         PersistedSelection="true"   
         ondatabound="mygrid_DataBound" 
         OnRowDataBound="mygrid_RowDataBound" 
         HorizontalAlign="Center">
-        <HeaderStyle BackColor="Gainsboro" />
+        <HeaderStyle BackColor="#ae56c4" ForeColor="White" Font-Size="Larger" HorizontalAlign="Center" />
         <Columns>
             <asp:TemplateColumn HeaderText="อนุญาต">
                 <ItemStyle HorizontalAlign="Center" />
@@ -43,11 +43,17 @@
             <asp:BoundColumn HeaderText="จำนวนวันลาคงเหลือ" DataField="RemainDate"></asp:BoundColumn>
             <asp:BoundColumn HeaderText="ประเภทวันลา" DataField="Type"></asp:BoundColumn>
             <asp:BoundColumn HeaderText="สาเหตุ" DataField="Note"></asp:BoundColumn>
+            <asp:TemplateColumn HeaderText="ความคิดเห็น">
+                <ItemStyle HorizontalAlign="Center" />
+                <ItemTemplate>
+                    <asp:TextBox ID="txtComment" runat="server"></asp:TextBox>
+                </ItemTemplate>
+            </asp:TemplateColumn>
         </Columns>
     </asp:DataGrid>
     <div style="display: flex; align-items: center; justify-content: center; margin-top:10px;">
-        <asp:Button ID="btnSave" runat="server" Text="ตกลง" OnClick="btnSave_Click" />&nbsp;
-        <asp:Button ID="btnCancel" runat="server" Text="ยกเลิก" />
+        <asp:Button ID="btnSave" runat="server" CssClass="btn" BackColor="#ae56c4" ForeColor="White" Text="ตกลง" OnClick="btnSave_Click" />&nbsp;
+        <asp:Button ID="btnCancel" runat="server" CssClass="btn" BackColor="#ae56c4" ForeColor="White" Text="ยกเลิก" />
     </div>
 
 </asp:Content>

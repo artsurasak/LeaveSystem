@@ -3,7 +3,9 @@
     สถานะคำร้องขอลา
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentDetail" runat="server">
-    <asp:Label runat="server" class="font-weight-bold">สถานะคำร้องขอลา</asp:Label>
+    <asp:Label runat="server" class="font-weight-bold">
+        <h4><i class="fa fa-th-list" style="font-size:24px"></i>&nbsp;สถานะคำร้องขอลา</h4>
+    </asp:Label>
     <asp:Table runat="server" ID="tblSearch">
         <asp:TableRow>
             <asp:TableCell>รหัสพนักงาน</asp:TableCell>
@@ -18,7 +20,7 @@
         </asp:TableRow>
     </asp:Table>
     <asp:DataGrid CssClass="table table-hover" HorizontalAlign="Center" ID="dtgList" runat="server" AutoGenerateColumns="false">
-        <HeaderStyle BackColor="Gainsboro" HorizontalAlign="Center" />
+        <HeaderStyle BackColor="#ae56c4" ForeColor="White" Font-Size="Larger" HorizontalAlign="Center" />
         <ItemStyle HorizontalAlign="Center" />
         <Columns>
             <asp:BoundColumn HeaderText="รหัสพนักงาน" DataField="EmpCode"></asp:BoundColumn>

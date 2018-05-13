@@ -124,26 +124,30 @@ namespace IS.Page
             class_is.dbconfig db = new class_is.dbconfig();
             string sql = "";
             string LeaveID;
-
+            string Comment;
             //foreach (DataGridItem item in dtgList.Items)
             for (int i = 0; i <= dtgList.Items.Count - 1; i++)
             {
                 RadioButton rbValid = (RadioButton)dtgList.Items[i].Cells[0].FindControl("rd1");
                 RadioButton rbNValid = (RadioButton)dtgList.Items[i].Cells[1].FindControl("rd2");
+                TextBox txtComment = (TextBox)dtgList.Items[i].Cells[12].FindControl("txtComment");
                 if (rbValid != null && rbValid.Checked)
                 {
                     //update Status Request = A
                     LeaveID = dtgList.Items[i].Cells[2].Text.ToString();
-                    sql += UpdateStatusRequest(LeaveID, "A");
+                    Comment = txtComment.Text.ToString();
+                    sql += UpdateStatusRequest(LeaveID, "A",Comment);
                 }
                 else if (rbNValid != null && rbNValid.Checked)
                 {
                     // Update Status Request = R
                     LeaveID = dtgList.Items[i].Cells[2].Text.ToString();
-                    sql += UpdateStatusRequest(LeaveID, "R");
+                    Comment = txtComment.Text.ToString();
+                    sql += UpdateStatusRequest(LeaveID, "R", Comment);
                 }
             }
-            if (db.ExecuteSQL(sql)) {
+            if (db.ExecuteSQL(sql))
+            {
                 ScriptManager.RegisterStartupScript(this, this.GetType(), "Redit", "alert('Save Successfully!!!'); window.location='SearchRequestLeave.aspx';", true);
                 //BindData();
             }
@@ -158,13 +162,14 @@ namespace IS.Page
             }
         }
 
-        private string UpdateStatusRequest(string _LeaveID, string _Status)
+        private string UpdateStatusRequest(string _LeaveID, string _Status,string _Comment)
         {
             string sql;
             sql = "Update [REQUEST_LEAVE] set ";
             sql += "STATUS = '" + _Status + "',";
             sql += "APPROVE_DATE = sysdatetime(),";
-            sql += "APPROVE_BY = '" + Session["empCode"] + "'";
+            sql += "APPROVE_BY = '" + Session["empCode"] + "',";
+            sql += "COMMENT = '" + _Comment  + "'";
             sql += "where LEAVE_ID = '" + _LeaveID + "'";
             return sql;
         }

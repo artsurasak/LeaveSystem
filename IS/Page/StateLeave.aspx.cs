@@ -32,6 +32,7 @@ namespace IS.Page
             sql += "from REQUEST_LEAVE "; 
             sql += "where CREATE_BY = '" + Session["empCode"] + "' ";
             sql += "and REQ_CONFIRM = 'true' ";
+            sql += "and STATUS = 'A' ";
             sql += "group by LEAVETYPE_ID ";
             sql += ")as t2 ";
             sql += "on t1.ID = t2.LEAVETYPE_ID";

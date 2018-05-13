@@ -6,6 +6,7 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Web.UI.HtmlControls;
 using System.Data;
+using System.Drawing;
 
 namespace IS.Page
 {
@@ -51,7 +52,7 @@ namespace IS.Page
             sql += "from [MENU] menu left join  [GROUP_MENU_PERMISSION] per ";
             sql += "on  menu.MENU_ID = per.MENU_ID_PERMISSION ";
             sql += "and per.GROUP_ID = '" + ddlGroup.SelectedValue + "' ";
-            sql += "order by menu.SEQ ";
+            sql += "order by menu.MENU_ID  ";
             ds = db.getData(sql);
             count = ds.Tables[0].Rows.Count;
             hdCountLine.Value = count.ToString();
@@ -81,7 +82,12 @@ namespace IS.Page
             td.Text = "Permission";
             tr.Cells.Add(td);
 
-            tr.CssClass = "table-active";
+            //BackColor="#ae56c4" Font-Bold="true" ForeColor="White" Font-Size="Larger" HorizontalAlign="Center"
+            tr.Style.Add("background-color", "#ae56c4");
+            tr.Style.Add("font-size", "larger");
+            tr.ForeColor = Color.White;
+            tr.HorizontalAlign = HorizontalAlign.Center;
+            //tr.Style.Add()
             return tr;
         }
 

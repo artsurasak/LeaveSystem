@@ -53,6 +53,7 @@ namespace IS.Page
             sql += "from [REQUEST_LEAVE] "; 
             sql += "where LEAVETYPE_ID  = '1' ";
             sql += "and REQ_CONFIRM = 'true' ";
+            sql += "and STATUS = 'A' ";
             if (rblPeriod.SelectedValue == "2") sql += "and MONTH(FROM_LEAVE_DATE) in (1,2,3,10,11,12)";
             else if (rblPeriod.SelectedValue == "1") sql += "and MONTH(FROM_LEAVE_DATE) in (4,5,6,7,8,9)";
             sql += "and YEAR(FROM_LEAVE_DATE) = '" + ddlYears.SelectedValue +"'";
@@ -79,10 +80,11 @@ namespace IS.Page
             sql += "where LEAVETYPE_ID  = '1' ";
             sql += "and CREATE_BY = req.CREATE_BY ";
             sql += "and REQ_CONFIRM = 'true' ";
+            sql += "and STATUS = 'A' ";
             if (rblPeriod.SelectedValue == "2") sql += "and MONTH(FROM_LEAVE_DATE) in (1,2,3,10,11,12)";
             else if (rblPeriod.SelectedValue == "1") sql += "and MONTH(FROM_LEAVE_DATE) in (4,5,6,7,8,9)";
-            sql += "group by CREATE_BY , LEAVETYPE_ID)  as TotalLeave , "; 
-            sql += "(select convert(varchar(5),COUNT(LEAVETYPE_ID)) + '/' + convert(varchar(5),sum(NO_LEAVE)) as NoLeave ";
+            sql += "group by CREATE_BY , LEAVETYPE_ID)  as TotalLeave , ";
+            sql += "(select convert(varchar(5),sum(NO_LEAVE)) + '/' + convert(varchar(5),COUNT(LEAVETYPE_ID)) as NoLeave ";
             sql += "from [REQUEST_LEAVE] ";
             sql += "where LEAVETYPE_ID  = '2' ";
             sql += "and CREATE_BY = req.CREATE_BY ";

@@ -69,6 +69,7 @@ namespace IS
             sql += "where USER_NAME = '" + Session["userName"] + "'";
             sql += "and usr.USER_GROUP = per.GROUP_ID ";
             sql += "and per.MENU_ID_PERMISSION = menu.MENU_ID ";
+            sql += "and (MENU_SUB_LINK is null or MENU_LINK = '') ";
             sql += "order by menu.SEQ ";
             ds = db.getData(sql);
             cnt = ds.Tables[0].Rows.Count;

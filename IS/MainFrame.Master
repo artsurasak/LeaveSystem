@@ -9,41 +9,52 @@
         </asp:ContentPlaceHolder>
     </title>
     <link href="Bootstrape/CSS/bootstrap.min.css" rel="stylesheet" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
 </head>
-<body style="background: linear-gradient(#000000, #ffffff);">
+<body style="background: linear-gradient(#000000, #ffffff); font-family:Prompt" >
     <div class="container-fluid">
         <div class="row">
-            <div class="col-md-10 offset-md-1 offset-1 border rounded pb-4 pt-5" style="background-color: #ffffff; height:100vh;">
+            <div class="col-md-10 offset-md-1 offset-1 border rounded pb-0 pt-0" style="background-color: #ffffff; height: 3000px;">
                 <form id="form1" runat="server">
-                    <asp:Table runat="server" Width="100%">
+                    <asp:Table runat="server" Width="102.3%" style="background-image: url(../img/header.jpg); margin-left:-18px; background-size:cover; background-repeat:no-repeat; background-position: center center" Height="150">
                         <asp:TableRow>
-                            <asp:TableCell>
-                    <asp:Label runat="server">ระบบลาออนไลน์</asp:Label><br />
-                    <asp:Label runat="server">ONLINE LEAVE SYSTEM</asp:Label>
+                            <asp:TableCell style="padding-left:10px;">
+                                <asp:Label runat="server" ForeColor="White"><h2>ระบบลางานออนไลน์</h2></asp:Label><br />
+                                <asp:Label runat="server" ForeColor="White"><h3>ONLINE LEAVE SYSTEM</h3></asp:Label>
                             </asp:TableCell>
                             <asp:TableCell HorizontalAlign="Right">
                                 <asp:Table runat="server">
                                     <asp:TableRow>
-                                        <asp:TableCell HorizontalAlign="Right"><asp:Label runat="server">ชื่อ-สกุล :</asp:Label></asp:TableCell>
+                                        <asp:TableCell HorizontalAlign="Right"><asp:Label runat="server" ForeColor="White">ชื่อ-สกุล :</asp:Label></asp:TableCell>
                                         <asp:TableCell>
-                                            <asp:Label runat="server" ID="lblUsername"></asp:Label>
+                                            <asp:Label runat="server" ForeColor="White" ID="lblUsername"></asp:Label>
                                         </asp:TableCell>
                                     </asp:TableRow>
                                     <asp:TableRow>
-                                        <asp:TableCell HorizontalAlign="Right"><asp:Label runat="server">กลุ่ม :</asp:Label></asp:TableCell>
+                                        <asp:TableCell HorizontalAlign="Right"><asp:Label ForeColor="White" runat="server">กลุ่ม :</asp:Label></asp:TableCell>
                                         <asp:TableCell>
-                                            <asp:Label runat="server" ID="lblGroup"></asp:Label>
+                                            <asp:Label runat="server" ID="lblGroup" ForeColor="White"></asp:Label>
                                         </asp:TableCell>
                                     </asp:TableRow>
                                 </asp:Table>
                             </asp:TableCell>
                         </asp:TableRow>
                     </asp:Table>
-                    <div class="container">
-                        <ul class="nav nav-tabs" style="text-align: center;" id="ulMenu" runat="server">
+                    <div class="container" style="width:100%">
+                        <ul class="nav nav-tabs" style="margin:  0; padding: 0; list-style: none;display:table;table-layout: fixed; width: 100%" id="ulMenu" runat="server">
+                             <%--<li class="nav-item dropdown">
+                              <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#">Dropdown</a>
+                              <div class="dropdown-menu">
+                                       <a class="dropdown-item" href="#">Link 1</a>
+                                        <a class="dropdown-item" href="#">Link 2</a>
+                                        <a class="dropdown-item" href="#">Link 3</a>
+                              </div>
+                            </li>--%>
                         </ul>
                     </div>
-                    <hr />
                     <div>
                         <asp:ContentPlaceHolder ID="ContentDetail" runat="server">
                         </asp:ContentPlaceHolder>

@@ -76,8 +76,12 @@
     </script>
     <asp:HiddenField ID="hdftime" runat="server" Value="" />
     <asp:HiddenField ID="hdttime" runat="server" Value="" />
-    <asp:Label runat="server" class="font-weight-bold">สร้างคำร้องการลา</asp:Label>
-    <asp:Table runat="server">
+    <asp:Label runat="server" class="font-weight-bold">
+        <h4 style="display:inline"><span class="fa fa-edit"></span>&nbsp;สร้างคำร้องการลา</h4>
+        
+    </asp:Label>
+    <%--<hr />--%>
+    <asp:Table runat="server" style="margin-top:20px;" CellPadding="5" CellSpacing="5" HorizontalAlign="Center">
         <asp:TableRow>
             <asp:TableCell><asp:Label runat="server">ประเภทการลา</asp:Label></asp:TableCell>
             <asp:TableCell><asp:DropDownList ID="ddlLeaveType" CssClass="form-control" runat="server"></asp:DropDownList></asp:TableCell>
@@ -116,8 +120,8 @@
         </asp:TableRow>
         <asp:TableRow>
             <asp:TableCell ColumnSpan="10" HorizontalAlign="Center">
-                <asp:Button ID="btnSave" class="btn btn-secondary" runat="server" Text="บันทึก" OnClick="btnSave_Click" />&nbsp;
-                <asp:Button ID="btnCancel" class="btn btn-secondary" runat="server" Text="ยกเลิก" OnClick="btnCancel_Click" />
+                <asp:Button ID="btnSave" CssClass="btn" BackColor="#ae56c4" ForeColor="White" runat="server" Text="บันทึก" OnClick="btnSave_Click" />&nbsp;
+                <asp:Button ID="btnCancel" CssClass="btn" BackColor="#ae56c4" ForeColor="White" runat="server" Text="ยกเลิก" OnClick="btnCancel_Click" />
             </asp:TableCell>
 
         </asp:TableRow>

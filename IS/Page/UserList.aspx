@@ -9,8 +9,9 @@
             return window.open(url, '_blank');
         }
     </script>
-    <asp:DataGrid ID="dtg" Width="90%" runat="server" AutoGenerateColumns="false" HorizontalAlign="Center">
-        <HeaderStyle BackColor="Gainsboro" />
+    <asp:Label runat="server" class="font-weight-bold"><h4><span class="fa fa-list-alt"></span>&nbsp;รายการผู้ใช้งาน</h4></asp:Label>
+    <asp:DataGrid ID="dtg" Width="100%" CssClass="table table-hover" runat="server" AutoGenerateColumns="false" HorizontalAlign="Center">
+        <HeaderStyle BackColor="#ae56c4" ForeColor="White" Font-Size="Larger" HorizontalAlign="Center" />
         <Columns>
             <asp:BoundColumn HeaderText="รหัสพนักงาน" DataField="EMP_CODE"></asp:BoundColumn>
             <asp:BoundColumn HeaderText="ชื่อ - นามสกุล" DataField="NAME"></asp:BoundColumn>

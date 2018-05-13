@@ -3,9 +3,11 @@
     สถิติการลา
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentDetail" runat="server">
-    <asp:Label runat="server" class="font-weight-bold">สถิติการลา</asp:Label>
+    <asp:Label runat="server" class="font-weight-bold">
+        <h4><i class="fa fa-list-ul" style="font-size:24px"></i>&nbsp;สถิติการลา</h4>
+    </asp:Label>
     <asp:DataGrid CssClass="table table-hover" ID="gvState" runat="server" HorizontalAlign="Center" AutoGenerateColumns="false" >
-        <HeaderStyle BackColor="Gainsboro" />
+        <HeaderStyle BackColor="#ae56c4" ForeColor="White" Font-Size="Larger" HorizontalAlign="Center" />
         <Columns>
             <asp:BoundColumn HeaderText="ประเภทการลา" DataField="TYPE"></asp:BoundColumn>
             <asp:BoundColumn HeaderText="จำนวนวันลาทั้งหมด" DataField="NO_LEAVE"></asp:BoundColumn>

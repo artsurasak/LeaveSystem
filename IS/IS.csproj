@@ -72,8 +72,10 @@
     <Content Include="Bootstrape\JS\bootstrap.js.map" />
     <Content Include="Bootstrape\JS\bootstrap.min.js.map" />
     <Content Include="Bootstrape\JS\jquery\jquery-3.3.1.js" />
+    <Content Include="img\header.jpg" />
     <Content Include="MainFrame.Master" />
     <Content Include="Page\Report.aspx" />
+    <Content Include="Page\ReportNoLeave.aspx" />
     <Content Include="Page\ReportStatusLeave.aspx" />
     <Content Include="WickedPicker\dist\wickedpicker.min.css" />
     <Content Include="WickedPicker\dist\wickedpicker.min.js" />
@@ -224,6 +226,13 @@
     </Compile>
     <Compile Include="Page\Report.aspx.designer.cs">
       <DependentUpon>Report.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Page\ReportNoLeave.aspx.cs">
+      <DependentUpon>ReportNoLeave.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Page\ReportNoLeave.aspx.designer.cs">
+      <DependentUpon>ReportNoLeave.aspx</DependentUpon>
     </Compile>
     <Compile Include="Page\ReportStatusLeave.aspx.cs">
       <DependentUpon>ReportStatusLeave.aspx</DependentUpon>

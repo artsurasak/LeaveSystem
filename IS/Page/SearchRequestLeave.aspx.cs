@@ -14,38 +14,34 @@ namespace IS.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            getLeaveType();
+            defaultDate();
+            if (!Page.IsPostBack)
+            {
+                getLeaveType();
+            }
+        }
+
+        private void defaultDate()
+        {
+
         }
 
         protected void btnSearch_Click(object sender, EventArgs e)
         {
-            CultureInfo cultureinfo = new CultureInfo("en-US");
-            Thread.CurrentThread.CurrentCulture = cultureinfo;
-            DateTime _FDate = DateTime.ParseExact(txtFDate.Text, "dd/MM/yyyy", cultureinfo);
-            DateTime _TDate = DateTime.ParseExact(txtTDate.Text, "dd/MM/yyyy", cultureinfo);
-            //string sql;
-            //class_is.dbconfig db = new class_is.dbconfig();
-            //DataSet ds = new DataSet();
-            //sql = "select * ";
-            //sql += "from [REQUEST_LEAVE] reqLeave , [USER] usr ";
-            //sql += "where reqLeave.CREATE_BY = usr.EMP_CODE ";
-            //if (rblTypeDate.SelectedValue == "L") sql += "AND FROM_LEAVE_DATE >= '" + _FDate + "' AND TO_LEAVE_DATE < '" + _TDate + "'";
-            //else if (rblTypeDate.SelectedValue == "C") sql += "AND CREATE_DATE between '" + _FDate + "' AND '" + _TDate + "'";
-            //if (txtName.Text != "") sql += "AND usr.FIRST_NAME like '%" + txtName.Text + "%' ";
-            //if (txtEmpCode.Text != "") sql += "AND reqLeave.CREATE_BY = '" + txtEmpCode.Text + "' ";
-            //sql += "AND LEAVE_ID = '" + ddlLeaveType.SelectedValue + "' ";
-            //if (ddlStatus.SelectedValue != "*") sql += "AND STATUS = '" + ddlStatus.SelectedValue  +"'";
-            //ds = db.getData(sql);
-            //if (txtFDate.Text == "" && txtTDate.Text == "")
-            //{
-            //    Response.Write("<script> alert('Please Input Date!!!') </script>");
-            //}
-            //else
-            //{
-            string url = "ListRequestAppr.aspx?Type=" + rblTypeDate.SelectedValue + "&FDate=" + _FDate.ToString("yyyy-MM-dd") + "&TDate=" + _TDate.ToString("yyyy-MM-dd") + "&LeaveType=" + ddlLeaveType.SelectedValue;
+            if (txtFDate.Text == "" || txtTDate.Text == "")
+            {
+                Response.Write("<script> alert('Please Input Date!!!') </script>");
+            }
+            else
+            {
+                CultureInfo cultureinfo = new CultureInfo("en-US");
+                Thread.CurrentThread.CurrentCulture = cultureinfo;
+                DateTime _FDate = DateTime.ParseExact(txtFDate.Text, "dd/MM/yyyy", cultureinfo);
+                DateTime _TDate = DateTime.ParseExact(txtTDate.Text, "dd/MM/yyyy", cultureinfo);
+                string url = "ListRequestAppr.aspx?Type=" + rblTypeDate.SelectedValue + "&FDate=" + _FDate.ToString("yyyy-MM-dd") + "&TDate=" + _TDate.ToString("yyyy-MM-dd") + "&LeaveType=" + ddlLeaveType.SelectedValue;
                 url += "&Name=" + txtName.Text + "&EmpCode=" + txtEmpCode.Text + "&Status=" + ddlStatus.SelectedValue;
                 Response.Redirect(url);
-            //}
+            }
         }
 
         private void getLeaveType() {

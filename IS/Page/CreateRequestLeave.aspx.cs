@@ -113,7 +113,7 @@ namespace IS.Page
             class_is.dbconfig db = new class_is.dbconfig();
             DataSet ds = new DataSet();
             sql = "select sum(NO_LEAVE) as noLeaveDate ";
-            sql += "from [dbo].[REQUEST_LEAVE] ";
+            sql += "from [REQUEST_LEAVE] ";
             sql += "where CREATE_BY = '" + Session["empCode"] + "'"; 
             sql += "and LEAVETYPE_ID = '" + ddlLeaveType.Text + "'";
             sql += "group by LEAVETYPE_ID ";
@@ -130,7 +130,7 @@ namespace IS.Page
             class_is.dbconfig db = new class_is.dbconfig();
             DataSet ds = new DataSet();
             sql = "select NO_LEAVE  ";
-            sql += "from [dbo].[ROLE_NO_LEAVE] ";
+            sql += "from [ROLE_NO_LEAVE] ";
             sql += "where ROLE_ID = '" + Session["ROLE"] + "'";
             sql += "and LEAVE_TYPE = '" + ddlLeaveType.SelectedValue + "'";
             ds = db.getData(sql);

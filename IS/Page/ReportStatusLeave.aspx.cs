@@ -13,7 +13,32 @@ namespace IS.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            bindData();
+            if (!Page.IsPostBack)
+            {
+                bindData();
+                getLeaveType();
+            }
+        }
+
+        private void getLeaveType()
+        {
+            ListItem li;
+            class_is.dbconfig db = new class_is.dbconfig();
+            string sql;
+            DataSet ds;
+            sql = "select * ";
+            sql += "from [LEAVE_TYPE] ";
+            ds = db.getData(sql);
+            if (ds.Tables[0].Rows.Count > 0)
+            {
+                li = new ListItem("All", "*");
+                ddlTypeLeave.Items.Add(li);
+                for (int i = 0; i < ds.Tables[0].Rows.Count; i++)
+                {
+                    li = new ListItem(ds.Tables[0].Rows[i]["TYPE"].ToString(), ds.Tables[0].Rows[i]["ID"].ToString());
+                    ddlTypeLeave.Items.Add(li);
+                }
+            }
         }
 
         private void bindData()
@@ -26,6 +51,7 @@ namespace IS.Page
             sEmpCode = txtEmpCode.Text;
             //else sEmpCode = Session["empCode"].ToString();
             sName = txtName.Text;
+
             sql = "with reqData as ( ";
             sql += "SELECT usr.EMP_CODE as EmpCode , usr.[FIRST_NAME] + ' ' + usr.[LAST_NAME] as Name, convert(varchar(10), reqLeave.CREATE_DATE ,103) as CreateDate , ";
             sql += "convert(varchar(10),FROM_LEAVE_DATE,103) + ' ' + convert(varchar(5), reqLeave.FROM_LEAVE_TIME,114) + ' - ' + ";
@@ -47,6 +73,7 @@ namespace IS.Page
             sql += "and reqLeave.LEAVETYPE_ID = lType.ID ";
             if (sEmpCode != "") sql += "and reqLeave.CREATE_BY = '" + sEmpCode + "' ";
             if (sName != "") sql += "and usr.FIRST_NAME like N'%" + sName + "%'";
+            if (ddlTypeLeave.SelectedValue != "*" && ddlTypeLeave.SelectedValue != "") sql += "and reqLeave.LEAVETYPE_ID = '" + ddlTypeLeave.SelectedValue + "' ";
             sql += "and year(CREATE_DATE) = YEAR(GETDATE()) ";
             sql += ") ";
             sql += "select * , ";
@@ -64,6 +91,10 @@ namespace IS.Page
             {
                 BuildNoRecords(dtgList, ds);
             }
+            System.IO.StringWriter stringWrite = new System.IO.StringWriter();
+            System.Web.UI.HtmlTextWriter htmlWrite = new HtmlTextWriter(stringWrite);
+            dtgList.RenderControl(htmlWrite);
+            Session["dataList"] = stringWrite.ToString();
         }
 
         private void BuildNoRecords(DataGrid gridView, DataSet ds)
@@ -100,6 +131,15 @@ namespace IS.Page
         protected void btnSearch_Click(object sender, EventArgs e)
         {
             bindData();
+        }
+
+        protected void btnExport_Click(object sender, EventArgs e)
+        {
+            Response.AddHeader("content-disposition", "attachment;filename=FileName.xls");
+            Response.Charset = "";
+            Response.ContentType = "application/vnd.xls";
+            Response.Write(Session["dataList"]);
+            Response.End();
         }
     }
 }

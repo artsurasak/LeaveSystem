@@ -3,9 +3,9 @@
     Confirm Request
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentDetail" runat="server">
-    <asp:Label runat="server" class="font-weight-bold">ยืนยันการอนุมัติการลา</asp:Label>
-    <asp:DataGrid ID="dtgList" runat="server" AutoGenerateColumns="false" HorizontalAlign="Center">
-        <HeaderStyle BackColor="Gainsboro" HorizontalAlign="Center" />
+    <asp:Label runat="server" class="font-weight-bold"><h4><span class="fa fa-check"></span>&nbsp;ยืนยันการอนุมัติการลา</h4></asp:Label>
+    <asp:DataGrid ID="dtgList" CssClass="table table-hover" runat="server" AutoGenerateColumns="false" HorizontalAlign="Center">
+        <HeaderStyle BackColor="#ae56c4" ForeColor="White" Font-Size="Larger" HorizontalAlign="Center" />
         <Columns>
             <asp:TemplateColumn HeaderText="อนุญาต">
                 <ItemStyle HorizontalAlign="Center" />
@@ -13,12 +13,6 @@
                     <asp:RadioButton ID="rd1" GroupName="rb" runat="server" />
                 </ItemTemplate>
             </asp:TemplateColumn>
-           <%-- <asp:TemplateColumn HeaderText="ไม่อนุญาต">
-                <ItemStyle HorizontalAlign="Center" />
-                <ItemTemplate>
-                    <asp:RadioButton ID="rd2" GroupName="rb" runat="server" />
-                </ItemTemplate>
-            </asp:TemplateColumn>--%>
             <asp:BoundColumn DataField="reqID" Visible="false"></asp:BoundColumn>
             <asp:BoundColumn HeaderText="รหัสพนักงาน" DataField="EmpCode"></asp:BoundColumn>
             <asp:BoundColumn HeaderText="ชื่อพนักงาน" DataField="Name"></asp:BoundColumn>
@@ -29,7 +23,7 @@
         </Columns>
     </asp:DataGrid>
     <div style="display: flex; align-items: center; justify-content: center; margin-top:10px;">
-        <asp:Button ID="btnSave" runat="server" Text="ตกลง" OnClick="btnSave_Click" />&nbsp;
+        <asp:Button ID="btnSave" runat="server" Text="ตกลง" CssClass="btn" BackColor="#ae56c4" ForeColor="White" OnClick="btnSave_Click" />&nbsp;
         <%--<asp:Button ID="btnCancel" runat="server" Text="ยกเลิก" />--%>
     </div>
 </asp:Content>
