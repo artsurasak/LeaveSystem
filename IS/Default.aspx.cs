@@ -12,7 +12,15 @@ namespace IS
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            if (!IsPostBack)
+            {
+                if (Request.Cookies["userid"] != null)
+                    txtUsername.Text = Request.Cookies["userid"].Value;
+                if (Request.Cookies["pwd"] != null)
+                    txtPassword.Attributes.Add("value", Request.Cookies["pwd"].Value);
+                if (Request.Cookies["userid"] != null && Request.Cookies["pwd"] != null)
+                    chkRemember.Checked = true;
+            } 
         }
 
         protected void btnSubmit_Click(object sender, EventArgs e)
@@ -31,6 +39,7 @@ namespace IS
             ds = db.getData(sql);
             if (ds.Tables[0].Rows.Count > 0)
             {
+                RememberMe();
                 userName = ds.Tables[0].Rows[0]["USER_NAME"].ToString();
                 password = ds.Tables[0].Rows[0]["PASSWORD"].ToString();
                 Session["userName"] = userName;
@@ -54,6 +63,21 @@ namespace IS
             else
             {
                 Response.Write("<script> alert('User Name Not Found!!!') </script>");
+            }
+        }
+
+        private void RememberMe() {
+            if (chkRemember.Checked == true)
+            {
+                Response.Cookies["userid"].Value = txtUsername.Text;
+                Response.Cookies["pwd"].Value = txtPassword.Text;
+                Response.Cookies["userid"].Expires = DateTime.Now.AddDays(15);
+                Response.Cookies["pwd"].Expires = DateTime.Now.AddDays(15);
+            }
+            else
+            {
+                Response.Cookies["userid"].Expires = DateTime.Now.AddDays(-1);
+                Response.Cookies["pwd"].Expires = DateTime.Now.AddDays(-1);
             }
         }
 

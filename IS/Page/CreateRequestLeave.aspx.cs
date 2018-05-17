@@ -74,23 +74,36 @@ namespace IS.Page
 
         protected void btnSave_Click(object sender, EventArgs e)
         {
-            if (chkValidNoLeave())
+            if (txtDay.Text != "" && txtHour.Text != "")
             {
-                if (Request.QueryString["Req"] != null)
-                {
-                    if (UpdateData()){ScriptManager.RegisterStartupScript(this, this.GetType(), "Redit", "alert('Update Request Complete'); window.location='CreateRequestLeave.aspx';", true);}
-                    else{ScriptManager.RegisterStartupScript(this, this.GetType(), "Redit", "alert('Update Request Error');", true);}
+                if (Convert.ToInt16(txtDay.Text) >= 0 && Convert.ToInt16(txtHour.Text) >= 0) { 
+                    if (chkValidNoLeave())
+                    {
+                        if (Request.QueryString["Req"] != null)
+                        {
+                            if (UpdateData()) { ScriptManager.RegisterStartupScript(this, this.GetType(), "Redit", "alert('Update Request Complete'); window.location='CreateRequestLeave.aspx';", true); }
+                            else { ScriptManager.RegisterStartupScript(this, this.GetType(), "Redit", "alert('Update Request Error');", true); }
+                        }
+                        else
+                        {
+                            if (SaveData()) { ScriptManager.RegisterStartupScript(this, this.GetType(), "Redit", "alert('Create Request Complete'); window.location='CreateRequestLeave.aspx';", true); }
+                            else { ScriptManager.RegisterStartupScript(this, this.GetType(), "Redit", "alert('Create Request Error');", true); }
+                        }
+                    }
+                    else
+                    {
+                        Response.Write("<script> alert('จำนวนวันลาหมดแล้ว') </script>");
+                    }
                 }
                 else
                 {
-                    if (SaveData()){ScriptManager.RegisterStartupScript(this, this.GetType(), "Redit", "alert('Create Request Complete'); window.location='CreateRequestLeave.aspx';", true);}
-                    else { ScriptManager.RegisterStartupScript(this, this.GetType(), "Redit", "alert('Create Request Error');", true); }
+                    ScriptManager.RegisterStartupScript(this, this.GetType(), "Redit", "alert('จำนวนวันลาติดลบไม่ได้');", true);
                 }
             }
-            else {
-                Response.Write("<script> alert('จำนวนวันลาหมดแล้ว') </script>");
+            else
+            {
+                ScriptManager.RegisterStartupScript(this, this.GetType(), "Redit", "alert('กรูณากดคำนวณวันลา');", true);
             }
-           
         }
 
         private Boolean chkValidNoLeave() {
@@ -241,23 +254,28 @@ namespace IS.Page
                 TimeSpan result;
                 fDate = fDate + fTime;
                 tDate = tDate + tTime;
-                result = (tDate - fDate);
-                int days = result.Days;
-                for (var i = 0; i <= days; i++)
+                if (fDate < tDate)
                 {
-                    DateTime resultDate = fDate.AddDays(i);
-                    if (DateWeekend(resultDate))
+                    result = (tDate - fDate);
+                    int days = result.Days;
+                    for (var i = 0; i <= days; i++)
                     {
-                        noWeekend += 1;
+                        DateTime resultDate = fDate.AddDays(i);
+                        if (DateWeekend(resultDate))
+                        {
+                            noWeekend += 1;
+                        }
                     }
+                    day = result.Days - noWeekend;
+                    Hour = result.Hours;
+                    if (result.Hours == 9) { Hour = 0; day += 1; }
+                    txtDay.Text = day.ToString();
+                    txtHour.Text = Hour.ToString();
                 }
-                day = result.Days - noWeekend;
-                Hour = result.Hours;
-                if (result.Hours == 9) { Hour = 0; day += 1; }
-                txtDay.Text = day.ToString();
-                txtHour.Text =Hour.ToString();
-                //double day;
-                //day = (tDate - fDate).TotalDays;
+                else
+                {
+                    ScriptManager.RegisterStartupScript(this, this.GetType(), "Redit", "alert('วันที่สิ้นสุดการลามากกว่าวันที่เริ่มลา');", true);
+                }
             }
         }
 

@@ -3,3 +3,9 @@ C:\Users\SP\Documents\Visual Studio 2013\Projects\IS\IS\bin\IS.dll
 C:\Users\SP\Documents\Visual Studio 2013\Projects\IS\IS\bin\IS.pdb
 C:\Users\SP\Documents\Visual Studio 2013\Projects\IS\IS\obj\Debug\IS.dll
 C:\Users\SP\Documents\Visual Studio 2013\Projects\IS\IS\obj\Debug\IS.pdb
+C:\Users\SP\Documents\GitHub\LeaveSystem\IS\bin\IS.dll.config
+C:\Users\SP\Documents\GitHub\LeaveSystem\IS\bin\IS.dll
+C:\Users\SP\Documents\GitHub\LeaveSystem\IS\bin\IS.pdb
+C:\Users\SP\Documents\GitHub\LeaveSystem\IS\obj\Debug\IS.csprojResolveAssemblyReference.cache
+C:\Users\SP\Documents\GitHub\LeaveSystem\IS\obj\Debug\IS.dll
+C:\Users\SP\Documents\GitHub\LeaveSystem\IS\obj\Debug\IS.pdb

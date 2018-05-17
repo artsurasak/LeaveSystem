@@ -60,8 +60,8 @@
                                 <div class="row">
                                     <div class="col-md-6 col-12 pl-4">
                                         <div class="custom-control custom-checkbox mr-sm-2">
-                                            <input type="checkbox" class="custom-control-input" id="customControlAutosizing">
-                                            <label class="custom-control-label text-white" for="customControlAutosizing">Remember me</label>
+                                            <input type="checkbox" runat="server" class="custom-control-input" id="chkRemember">
+                                            <label class="custom-control-label text-white" for="chkRemember">Remember me</label>
                                         </div>
                                     </div>
                                     <div class="col-md-6 col-12 pl-4">
